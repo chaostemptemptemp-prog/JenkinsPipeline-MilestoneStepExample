@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage ('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/<student-username>/<repo-name>.git'
+                checkout scmGit(branches: [[name: '**']], extensions: [],
+                userRemoteConfigs: [[url: 'https://github.com/chaostemptemptemp-prog/JenkinsPipeline-MilestoneStepExample.git']])
             }
         }
         stage ('Build') {
